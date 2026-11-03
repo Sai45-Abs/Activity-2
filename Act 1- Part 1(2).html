@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Student Validation</title>
+</head>
+<body>
+<form action="C:\Users\91733\OneDrive\Desktop\Act 1(1) - WT - ACT 2\Act 1- Part 1(3).html" method="get" onsubmit="return validateForm()">
+<label>USN:</label>
+<input type="text" id="usn" name="usn">
+<br><br>
+<label>Password:</label>
+<input type="password" id="pwd" name="pwd">
+<br><br>
+<input type="submit" value="Login">
+</form>
+<script>
+function validateForm() {
+let usn = document.getElementById("usn").value;
+let pwd = document.getElementById("pwd").value;
+let usnPattern = /^\d{2}[A-Z]{3,4}\d{4}$/;
+let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+if (!usnPattern.test(usn)) {
+alert("Invalid USN format!");
+return false;
+}
+if (!passwordPattern.test(pwd)) {
+alert(
+"Invalid password!\n"+
+"Password must have:\n"+
+"- At least 8 characters\n"+
+"- One uppercase letter\n"+
+"- One lowercase letter\n"+
+"- One number\n"+
+"- One special character"
+);
+return false;
+}
+alert("Login Successful!");
+return true;
+}
+</script>
+</body>
+</html>

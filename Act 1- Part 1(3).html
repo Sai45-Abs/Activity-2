@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Jain Student Subject Marks</title>
+<!-- This Is For Style Of Body -->
+<style>
+body {
+background-image: url('ED.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+margin: 0;
+text-align: center;
+}
+.content {
+padding: 25px;
+}
+h1, h2 {
+font-family: Tahoma, sans-serif;
+}
+</style>
+</head>
+<body>
+<div class="content">
+<br><br><br><br><br><br><br><br><br>
+<h2 id="english"></h2>
+<h2 id="science"></h2>
+<h2 id="social"></h2>
+<h2 id="maths"></h2>
+<h2 id="comp_sci"></h2>
+<h1 id="result"></h1>
+<h1 id="Grade"></h1>
+</div>
+<script>
+let English = 33;
+let Science = 47;
+let Social = 99;
+let Maths = 75;
+let Comp_Sci = 44;
+let Avg = (English + Science + Social + Maths + Comp_Sci) / 5;
+let grade;
+if (Avg < 35) {
+  grade = "F";
+} else if (Avg <= 50) {
+  grade = "C";
+} else if (Avg <= 65) {
+  grade = "C+";
+} else if (Avg <= 79) {
+  grade = "B";
+} else if (Avg <= 89) {
+  grade = "A";
+} else {
+  grade = "A+";
+}
+document.getElementById("english").innerText = "English Marks: " + English;
+document.getElementById("science").innerText = "Science Marks: " + Science;
+document.getElementById("social").innerText = "Social Marks: " + Social;
+document.getElementById("maths").innerText = "Maths Marks: " + Maths;
+document.getElementById("comp_sci").innerText = "Comp Sci Marks: " + Comp_Sci;
+document.getElementById("result").innerText = "Average Marks Of The Student: " + Avg;
+document.getElementById("Grade").innerText = "Grade Of The Student: " + grade;
+console.log(Avg);
+</script>
+</body>
+</html>
